@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t44-tq-PcM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="L5a-Ab-BQm">
+            <objects>
+                <navigationController id="t44-tq-PcM" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XGg-dp-8pm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0cI-FN-IwC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iX4-dI-Fon" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183.5" y="429.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0T-Y3-p3b">
+                                <rect key="frame" x="121" y="184" width="118" height="41"/>
+                                <color key="backgroundColor" red="0.89411765336990356" green="0.17647059261798859" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="手机通讯录"/>
+                                <connections>
+                                    <segue destination="ANX-t6-0R7" kind="show" id="D3C-7e-Dql"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ri7-5c-hjD">
+                                <rect key="frame" x="121" y="255" width="118" height="41"/>
+                                <color key="backgroundColor" red="0.89411765340000005" green="0.1764705926" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="自定义通讯录"/>
+                                <connections>
+                                    <segue destination="J2z-NB-YV8" kind="show" id="k4X-c8-Ykz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qkt-iU-ELR"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339.5" y="429.5"/>
+        </scene>
+        <!--Custom Address Book View Controller-->
+        <scene sceneID="1Px-gd-ZJf">
+            <objects>
+                <viewController id="J2z-NB-YV8" customClass="CustomAddressBookViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vyU-BQ-hGN"/>
+                        <viewControllerLayoutGuide type="bottom" id="g8d-7Q-Ffu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cgz-wS-t9i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="搜索" translatesAutoresizingMaskIntoConstraints="NO" id="SoP-5t-xxe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="GK2-z1-pAb"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="J2z-NB-YV8" id="TRe-f1-acE"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jQ7-kR-401">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="J2z-NB-YV8" id="Gey-y0-6YJ"/>
+                                    <outlet property="delegate" destination="J2z-NB-YV8" id="8Wo-ye-WOW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SoP-5t-xxe" firstAttribute="leading" secondItem="Cgz-wS-t9i" secondAttribute="leading" id="40q-6l-3eS"/>
+                            <constraint firstAttribute="bottom" secondItem="jQ7-kR-401" secondAttribute="bottom" id="E8G-sF-poY"/>
+                            <constraint firstItem="jQ7-kR-401" firstAttribute="top" secondItem="SoP-5t-xxe" secondAttribute="bottom" id="Exf-KO-b0g"/>
+                            <constraint firstItem="SoP-5t-xxe" firstAttribute="top" secondItem="vyU-BQ-hGN" secondAttribute="bottom" id="NVd-UK-rah"/>
+                            <constraint firstItem="jQ7-kR-401" firstAttribute="leading" secondItem="Cgz-wS-t9i" secondAttribute="leading" id="YUU-ec-m0o"/>
+                            <constraint firstAttribute="trailing" secondItem="SoP-5t-xxe" secondAttribute="trailing" id="cCX-eD-F2a"/>
+                            <constraint firstAttribute="trailing" secondItem="jQ7-kR-401" secondAttribute="trailing" id="obq-qL-yha"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="searchBar" destination="SoP-5t-xxe" id="LAl-Qw-hJK"/>
+                        <outlet property="tableView" destination="jQ7-kR-401" id="9og-xe-paQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ed-OQ-ftf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814.5" y="838.5"/>
+        </scene>
+        <!--System Address Book View Controller-->
+        <scene sceneID="lK7-Vo-L1c">
+            <objects>
+                <viewController id="ANX-t6-0R7" customClass="SystemAddressBookViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MZI-dR-YGZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="OVW-tY-pzG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4bo-uX-4Iq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPy-7B-Xpr">
+                                <rect key="frame" x="105" y="325" width="105" height="30"/>
+                                <state key="normal" title="打开手机通讯录"/>
+                                <connections>
+                                    <action selector="openAddressBook:" destination="ANX-t6-0R7" eventType="touchUpInside" id="eLy-Ny-ay1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HxP-E3-tgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814.5" y="111.5"/>
+        </scene>
+    </scenes>
+</document>
